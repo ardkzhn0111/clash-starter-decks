@@ -1,72 +1,56 @@
 # Clash Starter
 
-A small English-language Clash Royale guide for the Web Technologies 1 midterm. Built with semantic HTML, custom CSS and Bootstrap 5.3.3. No build step or JavaScript is required.
-
-## Run
-
-Open `index.html` in a browser, or run `python -m http.server 8000` from this folder and visit http://localhost:8000. Google Fonts requires an internet connection; fallback fonts work offline. Card images and Bootstrap are local.
-
-## Current contribution
-
-The repository owner has completed two pages:
-
-- `index.html`: Home, with game basics, a learning path, deck previews and expandable FAQs.
-- `decks.html`: Beginner Decks, with two full deck lists, game plans, comparison table and practice tips.
-
-Both pages share working navigation, the same footer and `css/style.css`.
-
-## Team plan
-
-| Member | Pages |
-| --- | --- |
-| Member 1 (repository owner) | Home and Beginner Decks (complete) |
-| Member 2 | Card Guide, Practice (later) |
-
-Replace member labels with real names before final submission. Every member must commit their own work using their own GitHub account. Keep work comparable and coordinate shared CSS changes.
-
-The teammate should add `cards.html` (Card Guide) and `practice.html` (Practice). Once those files are ready, add their links to the main navigation on ALL four pages; keep `aria-current="page"` and the `active` class only on the current page. Do not add links before their pages exist. Copy the header and footer from an existing page. Reuse `css/style.css`, keep its shared rules stable, and scope new styles with page-specific classes. Use relative paths so GitHub Pages works.
-
-Practice should include a useful form: select a deck, practice goal and time, then generate a training plan in the browser. Do not pretend to send data to a server. The full project still needs the teammate's two pages, that form, final integration and a team report. The report is deliberately deferred until both members finish.
-
-## GitHub Pages
+A four-page English-language Clash Royale guide for the Web Technologies 1 midterm. Built with semantic HTML, Bootstrap 5.3.3, custom CSS and a small vanilla JavaScript practice planner. No framework, backend or build step.
 
 Live site: https://ardkzhn0111.github.io/clash-starter-decks/
+Repository: https://github.com/ardkzhn0111/clash-starter-decks
 
-Home: `index.html` · Beginner Decks: `decks.html`.
+## Pages and contributions
 
-Use a public repository named `clash-starter-decks`. In Settings → Pages, select Deploy from a branch, `main`, and `/ (root)`. Use relative asset paths, as this site is served under a repository subdirectory.
+| Account | Pages and integration |
+| --- | --- |
+| ardkzhn0111 | Home (`index.html`) and Beginner Decks (`decks.html`), initial shared styling and assets |
+| Zhanara77 | Card Guide (`cards.html`) and Practice (`practice.html`), practice planner (`js/practice.js`), page-specific styling and four-page navigation |
 
-## Design and code
+Work was developed with AI assistance. Both participants should review, understand and be able to explain their own code. Replace account labels with full student names in the eventual report. Existing commits are preserved; later work is committed under the contributing account.
 
-Navy headings, blue actions, gold accents and purple elixir counters reference the game without copying a template. Barlow Condensed is used for headings and Inter for body text. The hero uses two tilted game cards, with all layout handled by CSS.
+## Run locally
 
-Bootstrap supplies the responsive row/column grid, button, badge and table foundations. Custom CSS supplies the card grid, Flexbox navigation, layout, colors and media queries. There is no dynamic data, backend, framework or installation step.
+Open `index.html` in a browser, or run `python -m http.server 8000` and visit http://localhost:8000. Images and Bootstrap are local. Google Fonts requires internet; fallback fonts work offline. Practice needs JavaScript for personalized plans and includes a static routine when JavaScript is unavailable.
 
-Deck costs: Giant = 28 / 8 = 3.5. Hog = 21 / 8 = 2.625, displayed as 2.6. Standard cards are used, with no evolutions. These are learning examples, not current-meta or win-rate claims.
+## Code guide
+
+- All four HTML pages share a header, footer and `css/style.css`.
+- Bootstrap provides the grid, buttons, badges, table and form controls. Custom CSS sets the appearance, Flexbox layouts, card grids and responsive breakpoints.
+- Home introduces the game and contains native HTML expandable FAQs.
+- Beginner Decks includes two eight-card lists, tactics and a comparison table. Giant costs 28 / 8 = 3.5 elixir; Hog costs 21 / 8 = 2.625, shown as 2.6.
+- Card Guide explains 14 unique cards and two simple combinations.
+- Practice requires a deck, a goal and a duration. The script selects advice from small objects, creates three steps with `textContent`, displays the result and moves focus to its heading. Reset clears the result. Nothing is stored or sent to a server.
+
+## Working together
+
+Pull current `main` before making edits. Use your own Git identity. Add work in a feature branch when collaborating simultaneously, then open a pull request. Do not rewrite the other participant's history. Update the same main navigation on all four pages and keep only the current link marked `aria-current="page"`.
+
+## Publication
+
+GitHub Pages deploys `main` from `/ (root)`. Keep relative asset and page paths so the repository subdirectory works. `.nojekyll` enables plain static hosting.
+
+## Verification
+
+- All four pages checked at 375, 768 and 1280 px without horizontal overflow.
+- Main navigation has the same four working links on every page; local links, anchors, IDs and tag nesting checked.
+- Practice: empty submission blocked, all 18 deck/goal/duration combinations produce three stages with the correct total duration, regeneration replaces the previous plan, and reset clears both inputs and result.
+- Images, keyboard focus and the native Home FAQ checked.
 
 ## Credits
 
-- Clash Royale artwork © Supercell; downloaded from https://github.com/RoyaleAPI/cr-api-assets/tree/master/cards (individual source filenames match `assets/cards/`). No ownership of game artwork is claimed.
+- Clash Royale artwork © Supercell, provided through https://github.com/RoyaleAPI/cr-api-assets/tree/master/cards. Individual source filenames match `assets/cards/`. No ownership of game artwork is claimed.
 - Fan Content Policy: https://supercell.com/en/fan-content-policy/
-- Classic Hog composition: https://www.deckshop.pro/deck/detail/hog-rider,ice-golem,musketeer,cannon,skeletons,ice-spirit,fireball,the-log
-- Fonts: Inter and Barlow Condensed via https://fonts.google.com/ (SIL Open Font License).
-- Bootstrap 5.3.3: https://getbootstrap.com/ (MIT; license notice retained in the CSS).
-- Original page layout and guide text created with AI assistance. Review and understand all code before the individual defense.
+- Classic Hog deck reference: https://www.deckshop.pro/deck/detail/hog-rider,ice-golem,musketeer,cannon,skeletons,ice-spirit,fireball,the-log
+- Inter and Barlow Condensed: https://fonts.google.com/ (SIL Open Font License).
+- Bootstrap 5.3.3: https://getbootstrap.com/ (MIT notice retained in the local CSS).
+- Original layout, guide text and implementation developed with AI assistance. These are learning decks, not claims about the current competitive meta.
 
-## Acceptance checklist
+## Still required for submission
 
-Check 375 px, 768 px and 1280 px: no horizontal overflow, readable table, no overlapping cards, all images loaded. Check anchor links, visible keyboard focus, one H1, descriptive alt text and live GitHub Pages asset paths. The two owner pages are complete; the full midterm is not complete until both teammate pages and the report are added.
-
-
-## Handoff to teammate
-
-Repository: https://github.com/ardkzhn0111/clash-starter-decks
-
-1. Clone the repository, then create your own branch: `git switch -c teammate-pages`.
-2. Build `cards.html` and `practice.html` completely, using the shared style. Card Guide can explain card roles and combinations; Practice must include the useful form described above.
-3. Use Bootstrap grid/components on your own pages and customize them. Check 375, 768 and 1280 px without horizontal scrolling.
-4. Update all four navigation menus once both pages exist. Keep the existing deck links and section IDs working.
-5. Commit with your own Git identity, push your branch and open a pull request. Direct push requires the owner to add your GitHub account as a collaborator; otherwise fork the repository and open a pull request from your fork.
-6. After merging, verify all four pages on GitHub Pages. Prepare the shared English report only after integration.
-
-Do not rewrite Git history or attribute someone else's work to yourself. No package install is needed. The current project has no report and no backend.
+The report is intentionally not created yet. After team review, prepare the shared English report with full names and contributions, topic choice, design rationale, readable screenshots of all four pages at 375/768/1280 px, a conclusion, and both repository and deployed-site links. Each participant must submit and defend the project according to the assignment rules.

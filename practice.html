@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Create a simple Clash Royale practice plan based on your deck, training goal and available time.">
+    <title>
+      Practice | Clash Starter
+    </title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Clash Starter home">
+          <span class="brand-icon" aria-hidden="true">
+            ♜
+          </span>
+          CLASH
+          <span>
+            STARTER
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="index.html">
+            Home
+          </a>
+          <a href="decks.html">
+            Beginner Decks
+          </a>
+          <a href="cards.html">
+            Card Guide
+          </a>
+          <a href="practice.html" class="active" aria-current="page">
+            Practice
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="deck-intro">
+        <div class="container">
+          <p class="eyebrow">
+            ONE SESSION. ONE FOCUS.
+          </p>
+          <h1>
+            Practice with
+            <br>
+            a
+            <span>
+              plan.
+            </span>
+          </h1>
+          <p class="hero-description">
+            Pick a deck, choose one skill and set aside a little time. A useful session is about noticing better decisions, not counting wins.
+          </p>
+        </div>
+      </section>
+      <section class="container section" aria-labelledby="planner-title">
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="planner-panel">
+              <p class="eyebrow">
+                YOUR NEXT SESSION
+              </p>
+              <h2 id="planner-title">
+                Make it manageable.
+              </h2>
+              <p class="planner-intro">
+                All three choices are required. Your plan is created here in the browser; no information is sent or saved.
+              </p>
+              <form id="practice-form">
+                <div class="mb-4">
+                  <label class="form-label" for="deck">
+                    1. Choose your deck
+                  </label>
+                  <select class="form-select" id="deck" name="deck" required>
+                    <option value="">
+                      Select a deck
+                    </option>
+                    <option value="giant">
+                      Giant Beatdown
+                    </option>
+                    <option value="hog">
+                      Hog 2.6 Cycle
+                    </option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label" for="goal">
+                    2. Choose one focus
+                  </label>
+                  <select class="form-select" id="goal" name="goal" required>
+                    <option value="">
+                      Select a skill
+                    </option>
+                    <option value="defense">
+                      Defend before attacking
+                    </option>
+                    <option value="elixir">
+                      Manage elixir
+                    </option>
+                    <option value="attack">
+                      Build a better attack
+                    </option>
+                  </select>
+                </div>
+                <fieldset class="mb-4">
+                  <legend class="form-label">
+                    3. How much time do you have?
+                  </legend>
+                  <div class="time-options">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="minutes" id="time-10" value="10" required>
+                      <label class="form-check-label" for="time-10">
+                        10 minutes
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="minutes" id="time-20" value="20">
+                      <label class="form-check-label" for="time-20">
+                        20 minutes
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="minutes" id="time-30" value="30">
+                      <label class="form-check-label" for="time-30">
+                        30 minutes
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+                <button class="btn btn-primary" type="submit">
+                  Build my plan
+                  <span aria-hidden="true">
+                    ↗
+                  </span>
+                </button>
+                <button class="btn reset-plan" type="reset">
+                  Reset
+                </button>
+              </form>
+              <noscript>
+                <p class="mistake">
+                  Enable JavaScript to generate a personalized plan. You can still follow the three-step routine below.
+                </p>
+              </noscript>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <aside class="practice-note">
+              <span class="badge rounded-pill">
+                A SMALL GOAL IS ENOUGH
+              </span>
+              <h2>
+                Better decisions
+                <br>
+                before better results.
+              </h2>
+              <p>
+                Use a friendly battle or another practice setting available to you. Keep the same deck during your session.
+              </p>
+              <ul>
+                <li>
+                  Check that you own all eight cards.
+                </li>
+                <li>
+                  Focus on the skill you picked.
+                </li>
+                <li>
+                  Review one mistake without changing everything.
+                </li>
+              </ul>
+              <a class="text-link" href="cards.html">
+                Need a card refresher? ↗
+              </a>
+            </aside>
+          </div>
+        </div>
+        <section id="plan-result" class="plan-result" aria-labelledby="result-title" hidden>
+          <p class="eyebrow">
+            YOUR TRAINING PLAN
+          </p>
+          <h2 id="result-title" tabindex="-1">
+            Your session
+          </h2>
+          <p id="plan-summary">
+          </p>
+          <ol id="plan-steps" class="learning-path">
+          </ol>
+          <p class="plan-reminder">
+            This is a flexible time budget, not a match-count promise. Finish your current match before reviewing.
+          </p>
+        </section>
+        <p id="plan-status" class="visually-hidden" role="status" aria-live="polite">
+        </p>
+      </section>
+      <section class="comparison-section">
+        <div class="container section">
+          <p class="eyebrow">
+            A ROUTINE YOU CAN REPEAT
+          </p>
+          <h2>
+            Prepare. Play. Review.
+          </h2>
+          <div class="row g-4 mt-2">
+            <div class="col-md-4">
+              <article class="tip">
+                <span>
+                  01 / PREPARE
+                </span>
+                <h3>
+                  Know your tools.
+                </h3>
+                <p>
+                  Find your tower attacker, your air defense and your cheap response. Read their roles before starting a match.
+                </p>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="tip">
+                <span>
+                  02 / PLAY
+                </span>
+                <h3>
+                  Watch one habit.
+                </h3>
+                <p>
+                  Pay attention to your chosen skill. Avoid judging a whole session by one win or one loss.
+                </p>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="tip">
+                <span>
+                  03 / REVIEW
+                </span>
+                <h3>
+                  Take one lesson.
+                </h3>
+                <p>
+                  Watch a replay and identify a specific moment you would play differently. Carry that lesson into your next session.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container section">
+        <div class="guide-next">
+          <div>
+            <p class="eyebrow">
+              KEEP IT SIMPLE
+            </p>
+            <h2>
+              Same deck. A little more confidence.
+            </h2>
+          </div>
+          <a class="text-link" href="decks.html">
+            Back to the deck playbook ↗
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <a class="brand" href="index.html">
+            CLASH
+            <span>
+              STARTER
+            </span>
+          </a>
+          <p>
+            A small guide for your first big pushes.
+          </p>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            Unofficial fan content. Not affiliated with or endorsed by Supercell. Game artwork © Supercell. See
+            <a href="https://supercell.com/en/fan-content-policy/">
+              Supercell's Fan Content Policy
+            </a>
+            .
+          </p>
+          <p>
+            Credits:
+            <a href="https://github.com/RoyaleAPI/cr-api-assets">
+              card images via RoyaleAPI
+            </a>
+            ·
+            <a href="https://www.deckshop.pro/deck/detail/hog-rider,ice-golem,musketeer,cannon,skeletons,ice-spirit,fireball,the-log">
+              Hog deck reference
+            </a>
+            ·
+            <a href="https://fonts.google.com/">
+              Google Fonts
+            </a>
+            ·
+            <a href="https://getbootstrap.com/">
+              Bootstrap
+            </a>
+            . Original layout and guide text created with AI assistance.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/practice.js" defer>
+    </script>
+  </body>
+</html>
