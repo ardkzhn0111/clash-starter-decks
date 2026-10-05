@@ -30,6 +30,10 @@ Practice should include a useful form: select a deck, practice goal and time, th
 
 ## GitHub Pages
 
+Live site: https://ardkzhn0111.github.io/clash-starter-decks/
+
+Home: `index.html` · Beginner Decks: `decks.html`.
+
 Use a public repository named `clash-starter-decks`. In Settings → Pages, select Deploy from a branch, `main`, and `/ (root)`. Use relative asset paths, as this site is served under a repository subdirectory.
 
 ## Design and code
