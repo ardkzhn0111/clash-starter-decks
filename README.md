@@ -8,20 +8,25 @@ Open `index.html` in a browser, or run `python -m http.server 8000` from this fo
 
 ## Current contribution
 
-Beginner Decks is complete as the first page: two decks, eight cards each, game plans, comparison table and practice tips. It currently occupies `index.html` so the first deployment has a working entry page.
+The repository owner has completed two pages:
+
+- `index.html`: Home, with game basics, a learning path, deck previews and expandable FAQs.
+- `decks.html`: Beginner Decks, with two full deck lists, game plans, comparison table and practice tips.
+
+Both pages share working navigation, the same footer and `css/style.css`.
 
 ## Team plan
 
 | Member | Pages |
 | --- | --- |
-| Member 1 (repository owner) | Beginner Decks (current), Home (later) |
+| Member 1 (repository owner) | Home and Beginner Decks (complete) |
 | Member 2 | Card Guide, Practice (later) |
 
 Replace member labels with real names before final submission. Every member must commit their own work using their own GitHub account. Keep work comparable and coordinate shared CSS changes.
 
-When Home is ready, rename the current page to `decks.html` and use `index.html` for Home. Then add the same four-page navigation to every page. Keep the colors, fonts, container widths and footer consistent. Reuse `css/style.css`; scope page-specific additions with descriptive classes.
+The teammate should add `cards.html` (Card Guide) and `practice.html` (Practice). Once those files are ready, add their links to the main navigation on ALL four pages; keep `aria-current="page"` and the `active` class only on the current page. Do not add links before their pages exist. Copy the header and footer from an existing page. Reuse `css/style.css`, keep its shared rules stable, and scope new styles with page-specific classes. Use relative paths so GitHub Pages works.
 
-Practice should include a useful form: select a deck, practice goal and time, then generate a training plan in the browser. Do not pretend to send data to a server. The full project still needs four pages, that form, final integration and a team report. The report is deliberately deferred until both members finish.
+Practice should include a useful form: select a deck, practice goal and time, then generate a training plan in the browser. Do not pretend to send data to a server. The full project still needs the teammate's two pages, that form, final integration and a team report. The report is deliberately deferred until both members finish.
 
 ## GitHub Pages
 
@@ -46,4 +51,18 @@ Deck costs: Giant = 28 / 8 = 3.5. Hog = 21 / 8 = 2.625, displayed as 2.6. Standa
 
 ## Acceptance checklist
 
-Check 375 px, 768 px and 1280 px: no horizontal overflow, readable table, no overlapping cards, all images loaded. Check anchor links, visible keyboard focus, one H1, descriptive alt text and live GitHub Pages asset paths. Do not claim the entire midterm is complete after this first page.
+Check 375 px, 768 px and 1280 px: no horizontal overflow, readable table, no overlapping cards, all images loaded. Check anchor links, visible keyboard focus, one H1, descriptive alt text and live GitHub Pages asset paths. The two owner pages are complete; the full midterm is not complete until both teammate pages and the report are added.
+
+
+## Handoff to teammate
+
+Repository: https://github.com/ardkzhn0111/clash-starter-decks
+
+1. Clone the repository, then create your own branch: `git switch -c teammate-pages`.
+2. Build `cards.html` and `practice.html` completely, using the shared style. Card Guide can explain card roles and combinations; Practice must include the useful form described above.
+3. Use Bootstrap grid/components on your own pages and customize them. Check 375, 768 and 1280 px without horizontal scrolling.
+4. Update all four navigation menus once both pages exist. Keep the existing deck links and section IDs working.
+5. Commit with your own Git identity, push your branch and open a pull request. Direct push requires the owner to add your GitHub account as a collaborator; otherwise fork the repository and open a pull request from your fork.
+6. After merging, verify all four pages on GitHub Pages. Prepare the shared English report only after integration.
+
+Do not rewrite Git history or attribute someone else's work to yourself. No package install is needed. The current project has no report and no backend.
