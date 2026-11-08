@@ -1,6 +1,6 @@
 # Clash Starter
 
-A four-page English-language Clash Royale guide for the Web Technologies 1 midterm. Built with semantic HTML, Bootstrap 5.3.3, custom CSS and a small vanilla JavaScript practice planner. No framework, backend or build step.
+A four-page English-language Clash Royale guide for the Web Technologies 1 Endterm. Built with semantic HTML, Bootstrap 5.3.3, custom CSS, vanilla JavaScript and local jQuery effects. No framework, backend or build step.
 
 Live site: https://ardkzhn0111.github.io/clash-starter-decks/
 Repository: https://github.com/ardkzhn0111/clash-starter-decks
@@ -26,8 +26,8 @@ Open `index.html` in a browser, or run `python -m http.server 8000` and visit ht
 - Home includes a client-side learning brief with field-by-field validation. The brief stays in the browser; it is not sent to a server.
 - Beginner Decks adds a searchable, role-filtered card catalog rendered from 14 card objects, with live result counts and average elixir cost.
 - Beginner Decks includes two eight-card lists, tactics and a comparison table. Giant costs 28 / 8 = 3.5 elixir; Hog costs 21 / 8 = 2.625, shown as 2.6.
-- Card Guide explains 14 unique cards and two simple combinations.
-- Practice requires a deck, a goal and a duration. The script selects advice from small objects, creates three steps with `textContent`, displays the result and moves focus to its heading. Reset clears the result. Nothing is stored or sent to a server.
+- Card Guide renders 14 unique cards from JavaScript data, supports name/role search and filtering, calculates result counts and average elixir cost, and includes a five-question quiz with answer explanations.
+- Practice requires a deck, a goal and a duration. Its planner builds three timed steps and moves focus to the result. The practice journal validates session entries, calculates session totals and win rate, and saves notes in browser `localStorage`; no journal data is sent to a server.
 
 ## Working together
 
@@ -42,7 +42,9 @@ GitHub Pages deploys `main` from `/ (root)`. Keep relative asset and page paths 
 - All four pages checked at 375, 768 and 1280 px without horizontal overflow.
 - Main navigation has the same four working links on every page; local links, anchors, IDs and tag nesting checked.
 - Practice: empty submission blocked, all 18 deck/goal/duration combinations produce three stages with the correct total duration, regeneration replaces the previous plan, and reset clears both inputs and result.
-- Images, keyboard focus and the native Home FAQ checked.
+- Card Guide: all 14 cards render, search and role filtering update results, the empty state appears, and the quiz validates unanswered questions and scores completed answers.
+- Practice journal: required fields, future dates, duration range and note length are validated; successful entries persist after reload, can be deleted and update the summary values. Invalid stored JSON is ignored safely.
+- All four pages checked at 375, 768 and 1280 px without horizontal overflow. Images, keyboard focus and the native Home FAQ checked.
 
 ## Credits
 
@@ -51,5 +53,5 @@ GitHub Pages deploys `main` from `/ (root)`. Keep relative asset and page paths 
 - Classic Hog deck reference: https://www.deckshop.pro/deck/detail/hog-rider,ice-golem,musketeer,cannon,skeletons,ice-spirit,fireball,the-log
 - Inter and Barlow Condensed: https://fonts.google.com/ (SIL Open Font License).
 - Bootstrap 5.3.3: https://getbootstrap.com/ (MIT notice retained in the local CSS).
-- jQuery 3.7.1: https://jquery.com/ (local vendor file used for Home FAQ and feedback effects and the catalog result animation).
+- jQuery 3.7.1: https://jquery.com/ (local vendor file used for Home FAQ and feedback, catalog results, Card Guide quiz feedback and Practice journal effects).
 - Original layout, guide text and implementation developed with AI assistance. These are learning decks, not claims about the current competitive meta.

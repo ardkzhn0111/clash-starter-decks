@@ -203,6 +203,67 @@
         <p id="plan-status" class="visually-hidden" role="status" aria-live="polite">
         </p>
       </section>
+      <section class="comparison-section" id="journal" aria-labelledby="journal-title">
+        <div class="container section">
+          <p class="eyebrow">KEEP ONE USEFUL LESSON</p>
+          <h2 id="journal-title">Your practice journal.</h2>
+          <p class="journal-intro">Record a session and notice what you want to try next time. Entries stay in this browser.</p>
+          <p id="journal-message" class="journal-message" role="status" aria-live="polite" hidden></p>
+          <div class="row g-4 align-items-start">
+            <div class="col-lg-5">
+              <form id="journal-form" class="journal-form" novalidate>
+                <div class="mb-3">
+                  <label class="form-label" for="journal-date">Session date</label>
+                  <input class="form-control journal-input" type="date" id="journal-date" name="date" required aria-describedby="journal-date-error">
+                  <span id="journal-date-error" class="field-error" data-error-for="date"></span>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="journal-deck">Deck used</label>
+                  <select class="form-select journal-input" id="journal-deck" name="deck" required aria-describedby="journal-deck-error">
+                    <option value="">Choose a deck</option><option value="giant">Giant Beatdown</option><option value="hog">Hog 2.6 Cycle</option>
+                  </select>
+                  <span id="journal-deck-error" class="field-error" data-error-for="deck"></span>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="journal-focus">Practice focus</label>
+                  <select class="form-select journal-input" id="journal-focus" name="focus" required aria-describedby="journal-focus-error">
+                    <option value="">Choose a focus</option><option value="defense">Defend before attacking</option><option value="elixir">Manage elixir</option><option value="attack">Build a better attack</option>
+                  </select>
+                  <span id="journal-focus-error" class="field-error" data-error-for="focus"></span>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="journal-minutes">Minutes practiced</label>
+                  <input class="form-control journal-input" type="number" id="journal-minutes" name="minutes" min="1" max="60" step="1" inputmode="numeric" required aria-describedby="journal-minutes-error">
+                  <span id="journal-minutes-error" class="field-error" data-error-for="minutes"></span>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="journal-result">Match result</label>
+                  <select class="form-select journal-input" id="journal-result" name="result" required aria-describedby="journal-result-error">
+                    <option value="">Choose a result</option><option value="win">Win</option><option value="draw">Draw</option><option value="loss">Loss</option><option value="no-match">No match played</option>
+                  </select>
+                  <span id="journal-result-error" class="field-error" data-error-for="result"></span>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="journal-note">One lesson from the session</label>
+                  <textarea class="form-control journal-input" id="journal-note" name="note" rows="3" minlength="10" maxlength="300" required aria-describedby="journal-note-hint journal-note-error"></textarea>
+                  <small id="journal-note-hint" class="journal-hint">10–300 characters. Keep it specific.</small>
+                  <span id="journal-note-error" class="field-error" data-error-for="note"></span>
+                </div>
+                <button class="btn btn-primary" type="submit">Save session ↗</button>
+              </form>
+            </div>
+            <div class="col-lg-7">
+              <div class="journal-summary" aria-label="Practice journal summary">
+                <p><strong id="journal-count">0</strong><span> sessions</span></p>
+                <p><strong id="journal-minutes-total">0</strong><span> minutes practiced</span></p>
+                <p><strong id="journal-win-rate">—</strong><span> win rate</span></p>
+              </div>
+              <div id="journal-empty" class="empty-state">Your saved sessions will appear here. Start with one small lesson.</div>
+              <ol id="journal-entries" class="journal-entries" aria-label="Saved practice sessions"></ol>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="comparison-section">
         <div class="container section">
           <p class="eyebrow">
@@ -308,12 +369,17 @@
             <a href="https://getbootstrap.com/">
               Bootstrap
             </a>
+            ·
+            <a href="https://jquery.com/">
+              jQuery effects
+            </a>
             . Original layout and guide text created with AI assistance.
           </p>
         </div>
       </div>
     </footer>
-    <script src="js/practice.js" defer>
-    </script>
+    <script src="assets/vendor/jquery-3.7.1.min.js" defer></script>
+    <script src="js/practice.js" defer></script>
+    <script src="js/practice-journal.js" defer></script>
   </body>
 </html>
