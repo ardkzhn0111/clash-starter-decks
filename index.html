@@ -120,11 +120,71 @@
           </div>
         </div>
       </section>
+      <section class="container section deck-request-section" aria-labelledby="request-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">A PERSONAL STARTING POINT</p><h2 id="request-title">Tell us how you like to play.</h2></div>
+          <p>Build a simple learning recommendation around your arena, your cards and your goals.</p>
+        </div>
+        <div class="planner-panel">
+          <form id="deck-request-form" novalidate>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label class="form-label" for="request-name">Your name</label>
+                <input class="form-control request-input" id="request-name" name="name" autocomplete="name" required aria-describedby="request-name-error">
+                <span class="field-error" id="request-name-error"></span>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="request-email">Email address</label>
+                <input class="form-control request-input" id="request-email" name="email" type="email" autocomplete="email" required aria-describedby="request-email-error">
+                <span class="field-error" id="request-email-error"></span>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="request-arena">Current arena number</label>
+                <input class="form-control request-input" id="request-arena" name="arena" type="number" min="1" max="28" step="1" inputmode="numeric" required aria-describedby="request-arena-error">
+                <span class="field-error" id="request-arena-error"></span>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="request-style">Preferred playstyle</label>
+                <select class="form-select request-input" id="request-style" name="playstyle" required aria-describedby="request-style-error">
+                  <option value="">Choose a playstyle</option>
+                  <option value="steady">Build a steady push</option>
+                  <option value="fast">Play fast and cycle cards</option>
+                  <option value="unsure">I am still deciding</option>
+                </select>
+                <span class="field-error" id="request-style-error"></span>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="request-goal">What would you like to improve?</label>
+                <textarea class="form-control request-input" id="request-goal" name="goal" rows="4" minlength="20" maxlength="240" required aria-describedby="request-goal-help request-goal-error"></textarea>
+                <span class="form-text" id="request-goal-help">Write at least 20 characters. This stays in your browser and is not sent anywhere.</span>
+                <span class="field-error" id="request-goal-error"></span>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">Get my starting point <span aria-hidden="true">↗</span></button>
+              </div>
+            </div>
+          </form>
+          <div class="request-success" id="request-success" role="status" tabindex="-1" hidden>
+            <h3>Your learning brief is ready.</h3>
+            <p id="request-success-copy"></p>
+            <a class="text-link" href="decks.html">Explore the two beginner decks ↗</a>
+          </div>
+        </div>
+      </section>
       <section class="container home-faq" aria-labelledby="faq-title">
         <p class="eyebrow">BEFORE YOU START</p><h2 id="faq-title">A few quick answers.</h2>
-        <details><summary>Do I need every card before trying a deck?</summary><p>To play the exact list, yes. Check which cards you have unlocked first. In particular, classic Hog 2.6 includes The Log, a Legendary card. This guide does not assume every card is available on your first day.</p></details>
-        <details><summary>Which deck should I learn first?</summary><p>Start with Giant Beatdown if you want a clearer attack plan: a tank in front and support behind. Try Hog 2.6 when you are ready to practice precise defense and a faster cycle.</p></details>
-        <details><summary>Will a deck guarantee that I win?</summary><p>No. Card levels, matchups, placement and timing all matter. These decks are starting points for learning, not a promise of wins or a ranking of the current meta.</p></details>
+        <div class="faq-item">
+          <h3><button class="faq-trigger" id="faq-trigger-1" type="button" aria-expanded="false" aria-controls="faq-answer-1">Do I need every card before trying a deck?</button></h3>
+          <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-trigger-1" hidden><p>To play the exact list, yes. Check which cards you have unlocked first. In particular, classic Hog 2.6 includes The Log, a Legendary card. This guide does not assume every card is available on your first day.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-trigger" id="faq-trigger-2" type="button" aria-expanded="false" aria-controls="faq-answer-2">Which deck should I learn first?</button></h3>
+          <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-trigger-2" hidden><p>Start with Giant Beatdown if you want a clearer attack plan: a tank in front and support behind. Try Hog 2.6 when you are ready to practice precise defense and a faster cycle.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-trigger" id="faq-trigger-3" type="button" aria-expanded="false" aria-controls="faq-answer-3">Will a deck guarantee that I win?</button></h3>
+          <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-trigger-3" hidden><p>No. Card levels, matchups, placement and timing all matter. These decks are starting points for learning, not a promise of wins or a ranking of the current meta.</p></div>
+        </div>
         <a class="back-top" href="#">Back to top ↑</a>
       </section>
     </main>
@@ -166,10 +226,13 @@
             <a href="https://getbootstrap.com/">
               Bootstrap
             </a>
+            · jQuery effects via <a href="https://jquery.com/">jQuery</a>
             . Original layout and guide text created with AI assistance.
           </p>
         </div>
       </div>
     </footer>
+    <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/home.js" defer></script>
   </body>
 </html>

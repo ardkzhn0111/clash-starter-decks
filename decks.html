@@ -404,6 +404,36 @@
           Standard cards only; no evolutions required. Card availability depends on your progress. Hog 2.6 includes the Legendary card The Log. These are learning decks, not a promise of wins.
         </p>
       </section>
+      <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+        <div class="container section">
+          <div class="section-heading">
+            <div><p class="eyebrow">THE CARD TOOLKIT</p><h2 id="catalog-title">Find a card for your plan.</h2></div>
+            <p>Search the cards in our two beginner decks.<br>Compare roles and elixir costs as you explore.</p>
+          </div>
+          <div class="catalog-controls">
+            <div class="catalog-search">
+              <label class="form-label" for="card-search">Search cards</label>
+              <input class="form-control" id="card-search" type="search" placeholder="Try “air” or “Giant”" autocomplete="off">
+            </div>
+            <div class="catalog-filter">
+              <label class="form-label" for="role-filter">Filter by role</label>
+              <select class="form-select" id="role-filter">
+                <option value="all">All roles</option>
+                <option value="win condition">Win condition</option>
+                <option value="tank">Tank</option>
+                <option value="support">Support</option>
+                <option value="swarm">Swarm</option>
+                <option value="spell">Spell</option>
+                <option value="building">Building</option>
+                <option value="cycle">Cycle</option>
+              </select>
+            </div>
+          </div>
+          <p class="catalog-stats" id="catalog-stats" aria-live="polite"></p>
+          <p class="catalog-empty" id="catalog-empty" role="status" hidden>No cards match those choices. Try another search or role.</p>
+          <ul class="card-catalog" id="card-catalog" aria-label="Searchable card catalog"></ul>
+        </div>
+      </section>
       <section class="comparison-section" id="compare" aria-labelledby="compare-title">
         <div class="container section">
           <div class="section-heading">
@@ -593,10 +623,13 @@
             <a href="https://getbootstrap.com/">
               Bootstrap
             </a>
+            · jQuery effects via <a href="https://jquery.com/">jQuery</a>
             . Original layout and guide text created with AI assistance.
           </p>
         </div>
       </div>
     </footer>
+    <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/decks.js" defer></script>
   </body>
 </html>

@@ -22,7 +22,9 @@ Open `index.html` in a browser, or run `python -m http.server 8000` and visit ht
 
 - All four HTML pages share a header, footer and `css/style.css`.
 - Bootstrap provides the grid, buttons, badges, table and form controls. Custom CSS sets the appearance, Flexbox layouts, card grids and responsive breakpoints.
-- Home introduces the game and contains native HTML expandable FAQs.
+- Home introduces the game and contains a keyboard-accessible FAQ accordion with jQuery slide effects.
+- Home includes a client-side learning brief with field-by-field validation. The brief stays in the browser; it is not sent to a server.
+- Beginner Decks adds a searchable, role-filtered card catalog rendered from 14 card objects, with live result counts and average elixir cost.
 - Beginner Decks includes two eight-card lists, tactics and a comparison table. Giant costs 28 / 8 = 3.5 elixir; Hog costs 21 / 8 = 2.625, shown as 2.6.
 - Card Guide explains 14 unique cards and two simple combinations.
 - Practice requires a deck, a goal and a duration. The script selects advice from small objects, creates three steps with `textContent`, displays the result and moves focus to its heading. Reset clears the result. Nothing is stored or sent to a server.
@@ -49,8 +51,5 @@ GitHub Pages deploys `main` from `/ (root)`. Keep relative asset and page paths 
 - Classic Hog deck reference: https://www.deckshop.pro/deck/detail/hog-rider,ice-golem,musketeer,cannon,skeletons,ice-spirit,fireball,the-log
 - Inter and Barlow Condensed: https://fonts.google.com/ (SIL Open Font License).
 - Bootstrap 5.3.3: https://getbootstrap.com/ (MIT notice retained in the local CSS).
+- jQuery 3.7.1: https://jquery.com/ (local vendor file used for Home FAQ and feedback effects and the catalog result animation).
 - Original layout, guide text and implementation developed with AI assistance. These are learning decks, not claims about the current competitive meta.
-
-## Still required for submission
-
-The report is intentionally not created yet. After team review, prepare the shared English report with full names and contributions, topic choice, design rationale, readable screenshots of all four pages at 375/768/1280 px, a conclusion, and both repository and deployed-site links. Each participant must submit and defend the project according to the assignment rules.
