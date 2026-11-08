@@ -72,6 +72,9 @@
             <a href="#combinations">
               Simple combinations
             </a>
+            <a href="#quiz">
+              Quick quiz
+            </a>
           </nav>
         </div>
       </section>
@@ -128,432 +131,50 @@
         <div class="container section">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">
-                THE 14-CARD GUIDE
-              </p>
-              <h2 id="library-title">
-                Meet the cards in your decks.
-              </h2>
+              <p class="eyebrow">THE 14-CARD GUIDE</p>
+              <h2 id="library-title">Meet the cards in your decks.</h2>
             </div>
-            <p>
-              Standard cards, without evolutions.
-              <br>
-              Costs are shown in purple.
-            </p>
+            <p>Standard cards, without evolutions.<br>Costs are shown in purple.</p>
           </div>
-          <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="5 elixir">
-                      5
-                    </span>
-                    <img src="assets/cards/giant.png" alt="Giant card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Tower attacker
-                    </span>
-                    <h3>
-                      Giant
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Targets buildings and takes hits for the troops behind him.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Place him in front of surviving support troops to begin a counterpush.
-                </p>
-              </article>
+          <div class="card-guide-controls">
+            <div class="form-field">
+              <label class="form-label" for="guide-search">Search the card guide</label>
+              <input class="form-control" type="search" id="guide-search" placeholder="Try “air”, “spell” or “Hog”" autocomplete="off">
             </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="4 elixir">
-                      4
-                    </span>
-                    <img src="assets/cards/hog-rider.png" alt="Hog Rider card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Tower attacker
-                    </span>
-                    <h3>
-                      Hog Rider
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  A fast building-targeting troop for repeated attacks.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Send him when you can still afford a defense, not just because he is in your hand.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="4 elixir">
-                      4
-                    </span>
-                    <img src="assets/cards/musketeer.png" alt="Musketeer card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Air
-                      &
-                      ground support
-                    </span>
-                    <h3>
-                      Musketeer
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  A ranged troop that can hit both air and ground targets.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Give her space behind a tank and keep her away from enemy melee troops.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="4 elixir">
-                      4
-                    </span>
-                    <img src="assets/cards/mini-pekka.png" alt="Mini P.E.K.K.A card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Ground defense
-                    </span>
-                    <h3>
-                      Mini P.E.K.K.A
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Strong single-target damage against ground troops.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Use against a tank; support him against swarms. He cannot hit air troops.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="3 elixir">
-                      3
-                    </span>
-                    <img src="assets/cards/archers.png" alt="Archers card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Air
-                      &
-                      ground support
-                    </span>
-                    <h3>
-                      Archers
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Two ranged troops for flexible defense.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Use their range and protect them from spells or close-range attackers.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="3 elixir">
-                      3
-                    </span>
-                    <img src="assets/cards/minions.png" alt="Minions card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Air support
-                    </span>
-                    <h3>
-                      Minions
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Flying troops that attack air and ground targets.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Help defend against troops that cannot hit air, but watch for enemy spells.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="2 elixir">
-                      2
-                    </span>
-                    <img src="assets/cards/bomber.png" alt="Bomber card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Ground splash
-                    </span>
-                    <h3>
-                      Bomber
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Low-cost area damage against ground troops.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Clear clustered ground troops from behind a tank. He cannot hit air.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="3 elixir">
-                      3
-                    </span>
-                    <img src="assets/cards/cannon.png" alt="Cannon card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Defensive building
-                    </span>
-                    <h3>
-                      Cannon
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Pulls building-targeting attackers and hits ground troops.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Place toward the middle to draw an attacker away from your tower. Add air defense separately.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="2 elixir">
-                      2
-                    </span>
-                    <img src="assets/cards/ice-golem.png" alt="Ice Golem card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Cheap tank
-                    </span>
-                    <h3>
-                      Ice Golem
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  A low-cost building-targeting troop that absorbs damage.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Use him in front of Hog or to lead suitable enemy troops away from your defenders.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="1 elixir">
-                      1
-                    </span>
-                    <img src="assets/cards/skeletons.png" alt="Skeletons card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Distraction
-                    </span>
-                    <h3>
-                      Skeletons
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Cheap ground troops that buy time and help cycle your deck.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Distract a single-target attacker while a tower or support troop deals damage.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="1 elixir">
-                      1
-                    </span>
-                    <img src="assets/cards/ice-spirit.png" alt="Ice Spirit card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Brief control
-                    </span>
-                    <h3>
-                      Ice Spirit
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  A cheap jumping troop that briefly freezes enemies it hits.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Use its freeze to give your defense extra time or support an attack.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="3 elixir">
-                      3
-                    </span>
-                    <img src="assets/cards/arrows.png" alt="Arrows card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Area spell
-                    </span>
-                    <h3>
-                      Arrows
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Wide-area damage to groups of air or ground troops.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Save for a swarm that threatens your push or your tower.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="4 elixir">
-                      4
-                    </span>
-                    <img src="assets/cards/fireball.png" alt="Fireball card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Area spell
-                    </span>
-                    <h3>
-                      Fireball
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  Area damage for valuable groups of troops.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Look for multiple useful targets. Avoid spending four elixir without a clear reason.
-                </p>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="role-card">
-                <div class="role-card-top">
-                  <div class="role-image">
-                    <span class="elixir" aria-label="2 elixir">
-                      2
-                    </span>
-                    <img src="assets/cards/the-log.png" alt="The Log card" width="150" height="180" loading="lazy">
-                  </div>
-                  <div>
-                    <span class="badge rounded-pill">
-                      Ground spell
-                    </span>
-                    <h3>
-                      The Log
-                    </h3>
-                  </div>
-                </div>
-                <p>
-                  A rolling spell that damages and pushes back ground troops.
-                </p>
-                <p class="role-tip">
-                  <strong>
-                    Try this:
-                  </strong>
-                  Clear small ground troops. It does not hit air, and it is a Legendary card.
-                </p>
-              </article>
+            <div class="form-field">
+              <label class="form-label" for="guide-role">Filter by role</label>
+              <select class="form-select" id="guide-role">
+                <option value="all">All roles</option>
+                <option value="tower attacker">Tower attacker</option>
+                <option value="support">Support</option>
+                <option value="swarm">Swarm</option>
+                <option value="building">Building</option>
+                <option value="tank">Tank</option>
+                <option value="cycle">Cycle</option>
+                <option value="spell">Spell</option>
+              </select>
             </div>
           </div>
+          <p id="guide-stats" class="catalog-stats" aria-live="polite"></p>
+          <div id="guide-cards" class="row g-4" aria-label="Card guide results"></div>
+          <p id="guide-empty" class="empty-state" hidden>No cards match that search. Try another name or role.</p>
         </div>
+      </section>
+      <section class="container section" id="quiz" aria-labelledby="quiz-title">
+        <p class="eyebrow">CHECK WHAT YOU KNOW</p>
+        <h2 id="quiz-title">Five quick card questions.</h2>
+        <p class="quiz-intro">Choose one answer for each question, then review the explanations.</p>
+        <form id="card-quiz" class="quiz-form"></form>
+        <div class="quiz-actions">
+          <button class="btn btn-primary" type="submit" form="card-quiz">Check my answers ↗</button>
+          <button class="btn reset-plan" type="reset" form="card-quiz">Try again</button>
+        </div>
+        <p id="quiz-error" class="field-error" role="alert" hidden>Answer all five questions before checking your score.</p>
+        <section id="quiz-result" class="quiz-result" aria-labelledby="quiz-result-title" hidden>
+          <p class="eyebrow">YOUR CARD CHECK</p>
+          <h3 id="quiz-result-title" tabindex="-1"></h3>
+          <ol id="quiz-feedback" class="quiz-feedback"></ol>
+        </section>
       </section>
       <section class="container section" id="combinations" aria-labelledby="combinations-title">
         <p class="eyebrow">
@@ -655,10 +276,16 @@
             <a href="https://getbootstrap.com/">
               Bootstrap
             </a>
+            ·
+            <a href="https://jquery.com/">
+              jQuery effects
+            </a>
             . Original layout and guide text created with AI assistance.
           </p>
         </div>
       </div>
     </footer>
+    <script src="assets/vendor/jquery-3.7.1.min.js" defer></script>
+    <script src="js/cards.js" defer></script>
   </body>
 </html>

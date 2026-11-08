@@ -1017,6 +1017,56 @@ button:focus-visible { outline: 3px solid var(--purple); outline-offset: 5px; }
   font-weight: 600;
 }
 .request-input[aria-invalid="true"] { border-color: #a52a2a; }
+
+.card-guide-controls { display: grid; grid-template-columns: minmax(0, 2fr) minmax(210px, 1fr); gap: 18px; margin: 28px 0 14px; }
+.card-guide-controls .form-control { padding: 13px 14px; border-color: #aab9cb; font-size: 14px; }
+.card-guide-controls .form-control:focus { border-color: var(--purple); box-shadow: 0 0 0 3px #9346c733; }
+.catalog-stats { margin: 12px 0 20px; color: var(--muted); font-size: 13px; font-weight: 600; }
+.role-deck { margin: 16px 0 0!important; color: var(--blue)!important; font-size: 11px!important; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.empty-state { margin: 18px 0 0; padding: 22px; border: 1px dashed #aab9cb; border-radius: 12px; color: var(--muted); background: #fff; }
+.quiz-intro, .journal-intro { max-width: 680px; color: var(--muted); }
+.quiz-form { margin-top: 25px; }
+.quiz-question { margin: 0 0 18px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.quiz-question legend { float: none; width: auto; margin: 0 0 12px; font-size: 16px; font-weight: 700; }
+.quiz-option { display: flex; align-items: center; gap: 10px; width: fit-content; margin: 9px 0; color: var(--muted); font-size: 14px; cursor: pointer; }
+.quiz-option input { width: 17px; height: 17px; accent-color: var(--blue); }
+.quiz-option input:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+.quiz-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.quiz-result { margin-top: 26px; padding: 26px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.quiz-result .eyebrow { color: var(--blue); }
+.quiz-result h3 { margin: 0 0 18px; font-size: 28px; }
+.quiz-result h3:focus-visible { outline: 3px solid var(--purple); outline-offset: 5px; }
+.quiz-feedback { display: grid; gap: 10px; margin: 0; padding-left: 22px; }
+.quiz-feedback li { padding-left: 4px; color: var(--muted); font-size: 13px; }
+.quiz-feedback li::marker { font-weight: 700; }
+.quiz-correct::marker { color: #167348; }
+.quiz-incorrect::marker { color: #a52a2a; }
+.quiz-error { color: #a52a2a; font-weight: 700; }
+.journal-form { padding: 26px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.journal-form .form-control, .journal-form .form-select { border-color: #aab9cb; font-size: 14px; }
+.journal-form .form-control:focus, .journal-form .form-select:focus { border-color: var(--purple); box-shadow: 0 0 0 3px #9346c733; }
+.journal-input[aria-invalid="true"] { border-color: #a52a2a; }
+.journal-hint { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }
+.journal-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.journal-summary p { margin: 0; padding: 17px 13px; border-radius: 10px; background: #edf3ff; color: var(--muted); font-size: 12px; text-align: center; }
+.journal-summary strong { display: block; color: var(--ink); font-size: 23px; }
+.journal-entries { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.journal-entry { padding: 19px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.journal-entry-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.journal-entry h3 { margin: 0; font-size: 18px; }
+.journal-entry-meta { margin: 9px 0; color: var(--blue); font-size: 12px; font-weight: 700; }
+.journal-entry-note { margin: 0; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+.journal-delete { padding: 5px 9px; border: 1px solid var(--line); border-radius: 7px; background: transparent; color: var(--ink); font-size: 11px; font-weight: 700; cursor: pointer; }
+.journal-delete:hover { background: #edf2f8; }
+.journal-delete:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+.journal-message { margin: 0 0 18px; padding: 12px 15px; border-radius: 9px; background: #e7f5ec; color: #185c38; font-size: 13px; font-weight: 700; }
+.journal-message.is-error { background: #fff0ef; color: #8b2424; }
+@media (max-width: 767px) {
+  .card-guide-controls { grid-template-columns: 1fr; }
+  .journal-summary { grid-template-columns: 1fr; }
+  .journal-summary p { display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .journal-summary strong { display: inline; }
+}
 .request-success {
   margin-top: 28px;
   padding: 24px;
