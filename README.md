@@ -46,12 +46,12 @@ GitHub Pages deploys `main` from `/ (root)`. Keep relative asset and page paths 
 
 ## Verification
 
-- All four pages checked at 375, 768 and 1280 px without horizontal overflow.
+- No horizontal overflow at 375, 768 or 1280 px in light and dark themes.
 - Main navigation has the same four working links on every page; local links, anchors, IDs and tag nesting checked.
 - Practice: empty submission blocked, all 18 deck/goal/duration combinations produce three stages with the correct total duration, regeneration replaces the previous plan, and reset clears both inputs and result.
 - Card Guide: all 14 cards render, search and role filtering update results, the empty state appears, and the quiz validates unanswered questions and scores completed answers.
 - Practice journal: required fields, future dates, duration range and note length are validated; successful entries persist after reload, can be deleted and update the summary values. Invalid stored JSON is ignored safely.
-- Final browser QA covered 51 interaction and responsive checks. All four pages were checked at 375, 768 and 1280 px in light and dark themes without horizontal overflow.
+- Final browser QA completed 99 checks across all four pages, including form and quiz validation, saved-card and journal storage, local links and images, and responsive layouts at 375, 768 and 1280 px in both themes.
 
 ## Credits
 
