@@ -31,7 +31,7 @@ Open `index.html` in a browser, or run `python -m http.server 8000` and visit ht
 
 ## Final release upgrades
 
-- A light and dark theme switch appears on every page and remembers the visitor's choice.
+- The same light and dark theme setting is shared by all pages, persists after navigation and reload, and synchronizes across open tabs.
 - Dark mode uses consistent dark surfaces and readable text for the hero, deck panels and card tiles, practice notes, tables and footer.
 - Visitors can save cards in the Card Guide, see them on Beginner Decks, remove individual cards or clear the collection.
 - Submitted quiz answers are highlighted; each question displays the correct choice and its explanation.
@@ -52,7 +52,7 @@ GitHub Pages deploys `main` from `/ (root)`. Keep relative asset and page paths 
 - Practice: empty submission blocked, all 18 deck/goal/duration combinations produce three stages with the correct total duration, regeneration replaces the previous plan, and reset clears both inputs and result.
 - Card Guide: all 14 cards render, search and role filtering update results, the empty state appears, and the quiz validates unanswered questions and scores completed answers.
 - Practice journal: required fields, future dates, duration range and note length are validated; successful entries persist after reload, can be deleted and update the summary values. Invalid stored JSON is ignored safely.
-- Final browser QA completed 105 checks across all four pages, including form and quiz validation, saved-card and journal storage, dark-mode contrast, local links and images, and responsive layouts at 375, 768 and 1280 px in both themes.
+- Final browser QA completed 108 checks across all four pages, including cross-tab theme synchronization, form and quiz validation, saved-card and journal storage, dark-mode contrast, local links and images, and responsive layouts at 375, 768 and 1280 px in both themes.
 
 ## Credits
 

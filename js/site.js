@@ -100,6 +100,12 @@
     });
   }
 
+  function syncThemeFromStorage() {
+    let storedTheme = 'light';
+    try { storedTheme = localStorage.getItem(themeKey) || 'light'; } catch (_) { /* Use the page default when storage is unavailable. */ }
+    applyTheme(storedTheme);
+  }
+
   document.addEventListener('click', event => {
     const themeButton = event.target.closest('.theme-toggle');
     if (themeButton) {
@@ -131,12 +137,23 @@
     }
   });
 
+  // Keep other open pages in the same browser on the shared saved preference.
+  window.addEventListener('storage', event => {
+    if (event.key === themeKey || event.key === null) {
+      applyTheme(event.key === null ? 'light' : event.newValue);
+    }
+  });
+  window.addEventListener('pageshow', syncThemeFromStorage);
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) syncThemeFromStorage();
+  });
+
   window.ClashStarter = {
     isCardSaved: id => readFavorites().includes(id),
     renderSavedCards,
     cards: cardDetails
   };
 
-  applyTheme(document.documentElement.dataset.theme || 'light');
+  syncThemeFromStorage();
   renderSavedCards();
 })();
