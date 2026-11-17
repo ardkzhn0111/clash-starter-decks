@@ -95,7 +95,7 @@
     document.documentElement.dataset.theme = selected;
     document.querySelectorAll('.theme-toggle').forEach(button => {
       button.setAttribute('aria-pressed', String(selected === 'dark'));
-      button.setAttribute('aria-label', (active ? 'Remove ' : 'Save ') + (card ? card.name : 'card') + (active ? ' from your saved cards' : ' to your saved cards'));
+      button.setAttribute('aria-label', `Switch to ${selected === 'dark' ? 'light' : 'dark'} theme`);
       button.textContent = selected === 'dark' ? '☀ Light' : '☾ Dark';
     });
   }

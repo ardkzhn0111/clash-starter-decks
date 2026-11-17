@@ -57,7 +57,7 @@ requestForm.addEventListener('submit', function (event) {
     fast: 'Hog 2.6 offers a faster cycle to practice.',
     unsure: 'Compare both playstyles and choose the one that feels clearer.'
   }[formData.get('playstyle')];
-  requestSuccessCopy.textContent = `${formData.get('name').trim()}, your Arena ${formData.get('arena')} goal is saved for this session. ${playstyle} Your note stays on this page; nothing has been sent.`;
+  requestSuccessCopy.textContent = formData.get("name").trim() + ", based on Arena " + formData.get("arena") + ", your brief suggests: " + playstyle + " This recommendation was generated in this browser. Your details were not sent to or stored by a server.";
   requestForm.reset();
   inputs.forEach(function (input) { showRequestError(input, ''); });
   requestSuccess.hidden = false;

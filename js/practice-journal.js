@@ -27,12 +27,19 @@ function localDateString(date = new Date()) {
 journalDate.max = localDateString();
 journalDate.value = localDateString();
 
+function isCalendarDate(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year, month, day] = value.split('-').map(Number);
+  const date = new Date(year, month - 1, day);
+  return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day;
+}
+
 function validEntry(entry) {
-  return entry && typeof entry.id === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(entry.date)
+  return entry && typeof entry.id === 'string' && isCalendarDate(entry.date) && entry.date <= localDateString()
     && Object.hasOwn(deckNames, entry.deck) && Object.hasOwn(focusNames, entry.focus)
     && Number.isInteger(entry.minutes) && entry.minutes >= 1 && entry.minutes <= 60
     && Object.hasOwn(resultNames, entry.result) && typeof entry.note === 'string'
-    && entry.note.length >= 10 && entry.note.length <= 300;
+    && entry.note.trim().length >= 10 && entry.note.length <= 300;
 }
 
 function readEntries() {
@@ -138,6 +145,9 @@ function renderJournal() {
   document.querySelector('#journal-count').textContent = count;
   document.querySelector('#journal-minutes-total').textContent = minutes;
   document.querySelector('#journal-win-rate').textContent = played.length ? `${Math.round((wins / played.length) * 100)}%` : '—';
+  const focusCounts = journalEntries.reduce((totals, entry) => { totals[entry.focus] = (totals[entry.focus] || 0) + 1; return totals; }, {});
+  const leadingFocus = Object.entries(focusCounts).sort((left, right) => right[1] - left[1])[0];
+  document.querySelector('#journal-focus-summary').textContent = leadingFocus ? focusNames[leadingFocus[0]] : '—';
   journalEmpty.hidden = count > 0;
   journalList.hidden = count === 0;
 }

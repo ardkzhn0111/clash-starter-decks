@@ -69,7 +69,15 @@ function renderGuideCards() {
     const deck = document.createElement('p');
     deck.className = 'role-deck';
     deck.textContent = card.deck;
-    article.append(top, description, tip, deck);
+    const favorite = document.createElement('button');
+    favorite.type = 'button';
+    favorite.className = 'favorite-toggle';
+    favorite.dataset.cardId = card.id;
+    favorite.setAttribute('aria-pressed', String(window.ClashStarter.isCardSaved(card.id)));
+    const isSaved = window.ClashStarter.isCardSaved(card.id);
+    favorite.textContent = isSaved ? 'Saved ✓' : 'Save card +';
+    favorite.setAttribute('aria-label', (isSaved ? 'Remove ' : 'Save ') + card.name + (isSaved ? ' from' : ' to') + ' your saved cards');
+    article.append(top, description, tip, deck, favorite);
     column.append(article);
     cardGrid.append(column);
   });
@@ -103,12 +111,14 @@ const quizFeedback = document.querySelector('#quiz-feedback');
 quizQuestions.forEach(function (item, index) {
   const fieldset = document.createElement('fieldset');
   fieldset.className = 'quiz-question';
+  fieldset.dataset.questionIndex = String(index);
   const legend = document.createElement('legend');
   legend.textContent = `${index + 1}. ${item.question}`;
   fieldset.append(legend);
   item.options.forEach(function (option, optionIndex) {
     const label = document.createElement('label');
     label.className = 'quiz-option';
+    label.dataset.optionIndex = String(optionIndex);
     const input = document.createElement('input');
     input.type = 'radio';
     input.name = `question-${index}`;
@@ -118,6 +128,11 @@ quizQuestions.forEach(function (item, index) {
     label.append(input, text);
     fieldset.append(label);
   });
+  const explanation = document.createElement('p');
+  explanation.className = 'quiz-question-feedback';
+  explanation.setAttribute('role', 'status');
+  explanation.hidden = true;
+  fieldset.append(explanation);
   quizForm.append(fieldset);
 });
 
@@ -139,12 +154,30 @@ quizForm.addEventListener('submit', function (event) {
   let score = 0;
   quizFeedback.replaceChildren();
   quizQuestions.forEach(function (item, index) {
-    const correct = Number(answers[index].value) === item.answer;
+    const chosenIndex = Number(answers[index].value);
+    const correct = chosenIndex === item.answer;
+    const fieldset = quizForm.querySelector(`[data-question-index="${index}"]`);
+    const explanation = fieldset.querySelector('.quiz-question-feedback');
     if (correct) score += 1;
-    const feedback = document.createElement('li');
-    feedback.className = correct ? 'quiz-correct' : 'quiz-incorrect';
-    feedback.textContent = `${correct ? 'Correct.' : `Not quite. The answer is ${item.options[item.answer]}.`} ${item.explanation}`;
-    quizFeedback.append(feedback);
+    fieldset.querySelectorAll('.quiz-option').forEach(function (label) {
+      const optionIndex = Number(label.dataset.optionIndex);
+      label.classList.toggle('is-correct', optionIndex === item.answer);
+      label.classList.toggle('is-incorrect', optionIndex === chosenIndex && !correct);
+    });
+    explanation.classList.toggle('is-incorrect', !correct);
+    explanation.replaceChildren();
+    const status = document.createElement('strong');
+    status.textContent = correct ? 'Correct answer.' : 'Not quite. Review the highlighted answer.';
+    const answerLine = document.createElement('span');
+    answerLine.textContent = `Correct answer: ${item.options[item.answer]}.`;
+    const reason = document.createElement('span');
+    reason.textContent = `Why: ${item.explanation}`;
+    explanation.append(status, answerLine, reason);
+    explanation.hidden = false;
+    const resultLine = document.createElement('li');
+    resultLine.className = correct ? 'quiz-correct' : 'quiz-incorrect';
+    resultLine.textContent = `Question ${index + 1}: ${correct ? 'correct' : 'incorrect'}.`;
+    quizFeedback.append(resultLine);
   });
   quizTitle.textContent = `${score} out of ${quizQuestions.length} correct`;
   quizError.hidden = true;
@@ -155,6 +188,9 @@ quizForm.addEventListener('submit', function (event) {
 
 quizForm.addEventListener('reset', function () {
   quizError.hidden = true;
+  quizForm.querySelectorAll('.quiz-option').forEach(label => label.classList.remove('is-correct', 'is-incorrect'));
+  quizForm.querySelectorAll('.quiz-question-feedback').forEach(feedback => { feedback.hidden = true; feedback.classList.remove('is-incorrect'); });
+  quizFeedback.replaceChildren();
   window.jQuery(quizResult).stop(true, true).slideUp(160, function () {
     quizResult.hidden = true;
   });

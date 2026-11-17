@@ -7,12 +7,12 @@ Repository: https://github.com/ardkzhn0111/clash-starter-decks
 
 ## Pages and contributions
 
-| Account | Pages and integration |
-| --- | --- |
-| ardkzhn0111 | Home (`index.html`) and Beginner Decks (`decks.html`), initial shared styling and assets |
-| Zhanara77 | Card Guide (`cards.html`) and Practice (`practice.html`), practice planner (`js/practice.js`), page-specific styling and four-page navigation |
+| Account | Student | Pages and integration |
+| --- | --- | --- |
+| ardkzhn0111 | Ardak Kazykhan | Home and Beginner Decks, shared theme and saved-card foundation |
+| Zhanara77 | Zhanar Adilkhan | Card Guide and Practice, quiz answer review and journal improvements |
 
-Work was developed with AI assistance. Both participants should review, understand and be able to explain their own code. Replace account labels with full student names in the eventual report. Existing commits are preserved; later work is committed under the contributing account.
+Work was developed with AI assistance. Both participants should review, understand and be able to explain their own code. The Final report records the student names and individual contributions.
 
 ## Run locally
 
@@ -26,8 +26,15 @@ Open `index.html` in a browser, or run `python -m http.server 8000` and visit ht
 - Home includes a client-side learning brief with field-by-field validation. The brief stays in the browser; it is not sent to a server.
 - Beginner Decks adds a searchable, role-filtered card catalog rendered from 14 card objects, with live result counts and average elixir cost.
 - Beginner Decks includes two eight-card lists, tactics and a comparison table. Giant costs 28 / 8 = 3.5 elixir; Hog costs 21 / 8 = 2.625, shown as 2.6.
-- Card Guide renders 14 unique cards from JavaScript data, supports name/role search and filtering, calculates result counts and average elixir cost, and includes a five-question quiz with answer explanations.
-- Practice requires a deck, a goal and a duration. Its planner builds three timed steps and moves focus to the result. The practice journal validates session entries, calculates session totals and win rate, and saves notes in browser `localStorage`; no journal data is sent to a server.
+- Card Guide renders 14 unique cards from JavaScript data, supports search and role filtering, calculates result counts and average elixir cost, and includes a five-question quiz with per-answer highlighting, correct answers and explanations.
+- Practice requires a deck, a goal and a duration. Its planner builds three timed steps and moves focus to the result. The journal validates entries, calculates session totals, win rate and the most practiced focus, and stores valid records in browser `localStorage`.
+
+## Final release upgrades
+
+- A light and dark theme switch appears on every page and remembers the visitor's choice.
+- Visitors can save cards in the Card Guide, see them on Beginner Decks, remove individual cards or clear the collection.
+- Submitted quiz answers are highlighted; each question displays the correct choice and its explanation.
+- The Practice journal rejects invalid calendar dates and shows the most frequently practiced focus.
 
 ## Working together
 
@@ -44,7 +51,7 @@ GitHub Pages deploys `main` from `/ (root)`. Keep relative asset and page paths 
 - Practice: empty submission blocked, all 18 deck/goal/duration combinations produce three stages with the correct total duration, regeneration replaces the previous plan, and reset clears both inputs and result.
 - Card Guide: all 14 cards render, search and role filtering update results, the empty state appears, and the quiz validates unanswered questions and scores completed answers.
 - Practice journal: required fields, future dates, duration range and note length are validated; successful entries persist after reload, can be deleted and update the summary values. Invalid stored JSON is ignored safely.
-- All four pages checked at 375, 768 and 1280 px without horizontal overflow. Images, keyboard focus and the native Home FAQ checked.
+- Final browser QA covered 51 interaction and responsive checks. All four pages were checked at 375, 768 and 1280 px in light and dark themes without horizontal overflow.
 
 ## Credits
 

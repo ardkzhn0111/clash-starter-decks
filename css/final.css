@@ -130,3 +130,7 @@ html[data-theme="dark"] .quiz-question-feedback.is-incorrect { border-color: #ed
   .theme-toggle { padding: 6px 8px; font-size: 10px; }
   .saved-card-list { grid-template-columns: 1fr; }
 }
+
+.journal-summary { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.focus-summary-value { font-size: 15px !important; line-height: 1.3; }
+@media (max-width: 767px) { .journal-summary { grid-template-columns: 1fr; } }
