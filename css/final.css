@@ -17,11 +17,15 @@ html[data-theme="dark"] {
   --line: #34445b;
   --surface: #1a2738;
   --surface-alt: #202f43;
+  --surface-raised: #26384e;
   --field: #142132;
+  --action: #315ca8;
+  --action-hover: #3d6cba;
 }
 
 html[data-theme="dark"] body { background: var(--paper); color: var(--ink); }
 html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .deck-panel,
 html[data-theme="dark"] .planner-panel,
 html[data-theme="dark"] .request-card,
 html[data-theme="dark"] .request-success,
@@ -36,13 +40,48 @@ html[data-theme="dark"] .catalog-card,
 html[data-theme="dark"] .saved-card-item,
 html[data-theme="dark"] .empty-state { background: var(--surface); color: var(--ink); }
 html[data-theme="dark"] .hero { background: linear-gradient(110deg, #1a293b, #111a27); }
+html[data-theme="dark"] .arena { background: #192b40; }
+html[data-theme="dark"] .arena-grid {
+  background-image: linear-gradient(#a9bdd21c 1px, transparent 1px), linear-gradient(90deg, #a9bdd21c 1px, transparent 1px);
+}
+html[data-theme="dark"] .arena-label,
+html[data-theme="dark"] .arena-note { color: #c1cee0; }
+html[data-theme="dark"] .versus { color: #173253; }
+html[data-theme="dark"] .hero-card span { background: #0c1624; color: #f5f8ff; }
+html[data-theme="dark"] .hero-hog span { background: var(--action); }
+html[data-theme="dark"] .btn-primary { background: var(--action); color: #fff; }
+html[data-theme="dark"] .btn-primary:hover { background: var(--action-hover); }
 html[data-theme="dark"] .deck-intro,
 html[data-theme="dark"] .catalog-section,
 html[data-theme="dark"] .comparison-section,
 html[data-theme="dark"] .saved-cards-section { background-color: var(--surface-alt); }
-html[data-theme="dark"] .hero-card { background: #26384e; }
-html[data-theme="dark"] .playstyle-card { background: #2c2b32; }
+html[data-theme="dark"] .hero-card { background: var(--surface-raised); }
+html[data-theme="dark"] .deck-panel { box-shadow: 0 5px 0 #0b1320; }
+html[data-theme="dark"] .deck-number { color: #71839e; }
+html[data-theme="dark"] .deck-panel .badge { background: #293c31; color: #c8e8b5; }
+html[data-theme="dark"] .hog-panel .badge { background: #302d4b; color: #d4cbff; }
+html[data-theme="dark"] .game-card {
+  background: var(--surface-alt);
+  border-color: var(--line);
+  color: var(--ink);
+  box-shadow: 0 3px 0 #0b1320;
+}
+html[data-theme="dark"] .game-card:hover { background: var(--surface-raised); box-shadow: 0 8px 16px #050a1280; }
+html[data-theme="dark"] .elixir { background: #704b96; color: #fff; border-color: var(--surface); }
+html[data-theme="dark"] .playstyle-card { background: var(--surface-alt); color: var(--ink); }
 html[data-theme="dark"] .hog-preview { background: #202e45; }
+html[data-theme="dark"] .home-path-section,
+html[data-theme="dark"] .plan-result { background: #0c1624; color: var(--ink); }
+html[data-theme="dark"] .site-footer { background: #0c1624; color: #c5d2e2; }
+html[data-theme="dark"] .site-footer .footer-bottom a { color: #b8cbff; }
+html[data-theme="dark"] .practice-note {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+html[data-theme="dark"] .practice-note p,
+html[data-theme="dark"] .practice-note li { color: var(--muted); }
+html[data-theme="dark"] .practice-note .badge { background: #293c31; color: #c8e8b5; }
 html[data-theme="dark"] .basic-symbol { background: #263953; }
 html[data-theme="dark"] .basic-symbol.purple { background: #392849; }
 html[data-theme="dark"] .basic-symbol.gold { background: #46391e; color: #ffdc8a; }
@@ -59,6 +98,11 @@ html[data-theme="dark"] input::placeholder,
 html[data-theme="dark"] textarea::placeholder { color: #a3b1c5; opacity: 1; }
 html[data-theme="dark"] .faq-trigger,
 html[data-theme="dark"] .saved-card-remove { color: var(--ink); }
+html[data-theme="dark"] .role-card .badge,
+html[data-theme="dark"] .steps li > span { background: #263953; color: #b6c8ff; }
+html[data-theme="dark"] .mistake { background: #3b321f; color: #f2dfb1; }
+html[data-theme="dark"] .mistake strong { color: #ffe2a1; }
+html[data-theme="dark"] .comparison-table thead th { background: #0c1624; color: var(--ink); }
 html[data-theme="dark"] .catalog-card-decks { border-color: var(--line); }
 html[data-theme="dark"] .catalog-empty { background: #3a321f; color: #ffe5a2; }
 html[data-theme="dark"] .request-success { border-left-color: #65c991; }
@@ -66,6 +110,12 @@ html[data-theme="dark"] .request-success p,
 html[data-theme="dark"] .journal-message { color: #c5f0d5; }
 html[data-theme="dark"] .journal-message { background: #203a31; }
 html[data-theme="dark"] .journal-message.is-error { background: #47292d; color: #ffd1d1; }
+html[data-theme="dark"] .field-error,
+html[data-theme="dark"] .quiz-error { color: #ffbaba; }
+html[data-theme="dark"] .quiz-correct::marker { color: #8ee0b0; }
+html[data-theme="dark"] .quiz-incorrect::marker { color: #ffbaba; }
+html[data-theme="dark"] .reset-plan:hover,
+html[data-theme="dark"] .journal-delete:hover { background: var(--surface-raised); }
 
 .header-inner { gap: 16px; }
 .header-inner > nav[aria-label="Main navigation"] { align-items: center; gap: 18px; }
