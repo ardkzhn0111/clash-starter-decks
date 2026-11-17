@@ -12,12 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem('clashStarter.theme.v1') || 'light'; } catch (_) { document.documentElement.dataset.theme = 'light'; }</script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/final.css">
   </head>
   <body>
     <a class="skip-link" href="#main">
       Skip to content
     </a>
+    <p class="visually-hidden" id="site-status" role="status" aria-live="polite"></p>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html" aria-label="Clash Starter home">
@@ -34,6 +37,8 @@
           <a href="decks.html" class="active" aria-current="page">Beginner Decks</a>
           <a href="cards.html">Card Guide</a>
           <a href="practice.html">Practice</a>
+          <a class="saved-count-link" href="#saved-cards">Saved <span class="saved-card-count">0</span></a>
+          <button class="theme-toggle" type="button" aria-pressed="false">☾ Dark</button>
         </nav>
       </div>
     </header>
@@ -584,6 +589,13 @@
           Back to top ↑
         </a>
       </section>
+      <section class="container section saved-cards-section" id="saved-cards" aria-labelledby="saved-cards-title">
+        <div class="section-heading"><div><p class="eyebrow">YOUR COLLECTION</p><h2 id="saved-cards-title">Saved cards.</h2></div><p id="saved-card-total" aria-live="polite">0 saved cards</p></div>
+        <p class="saved-card-intro">Save cards from the Card Guide and they will be ready for you here on any page.</p>
+        <p id="saved-card-empty" class="empty-state">No saved cards yet. Visit the <a href="cards.html#library">Card Guide</a> and save a few cards.</p>
+        <ul id="saved-card-list" class="saved-card-list" aria-label="Your saved cards" hidden></ul>
+        <button id="clear-saved-cards" class="btn reset-plan" type="button" disabled>Clear saved cards</button>
+      </section>
     </main>
     <footer class="site-footer">
       <div class="container">
@@ -630,6 +642,7 @@
       </div>
     </footer>
     <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/site.js" defer></script>
     <script src="js/decks.js" defer></script>
   </body>
 </html>

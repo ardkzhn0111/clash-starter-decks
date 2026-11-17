@@ -12,12 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem('clashStarter.theme.v1') || 'light'; } catch (_) { document.documentElement.dataset.theme = 'light'; }</script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/final.css">
   </head>
   <body>
     <a class="skip-link" href="#main">
       Skip to content
     </a>
+    <p class="visually-hidden" id="site-status" role="status" aria-live="polite"></p>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html" aria-label="Clash Starter home">
@@ -42,6 +45,8 @@
           <a href="practice.html" class="active" aria-current="page">
             Practice
           </a>
+          <a class="saved-count-link" href="decks.html#saved-cards">Saved <span class="saved-card-count">0</span></a>
+          <button class="theme-toggle" type="button" aria-pressed="false">☾ Dark</button>
         </nav>
       </div>
     </header>
@@ -379,6 +384,7 @@
       </div>
     </footer>
     <script src="assets/vendor/jquery-3.7.1.min.js" defer></script>
+    <script src="js/site.js" defer></script>
     <script src="js/practice.js" defer></script>
     <script src="js/practice-journal.js" defer></script>
   </body>
